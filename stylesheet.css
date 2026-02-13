@@ -1,4 +1,4 @@
-
+﻿
 * {
     margin: 0;
     padding: 0;
@@ -15,21 +15,20 @@ body {
 .navbar {
     display: flex;
     align-items: center;
-    padding: 70px 100px;
+    justify-content: space-between;
+    padding: 20px 60px 20px 0; 
     background-color: #355E3B;
     border-bottom: 3px solid #7FB069;
 }
 
 .logo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 120px; 
+    width: 120px;
     height: auto;
+    margin-left: 0;
+    display: block;
 }
 
 .nav-links {
-    margin-left: auto; 
     display: flex;
     gap: 40px;
 }
@@ -38,11 +37,37 @@ body {
         color: #F4F1E8;
         text-decoration: none;
         font-size: 20px;
+        transition: color 0.3s ease;
     }
 
         .nav-links a:hover {
             color: #D4A373;
         }
+
+h1 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 42px;
+}
+
+
+img {
+    display: block;
+    margin: 40px auto;
+    width: 800px;
+    max-width: 95%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+
+p {
+    text-align: center;
+    font-size: 18px;
+    max-width: 700px;
+    margin: 20px auto;
+    line-height: 1.6;
+}
 
 
 .image-grid {
@@ -54,7 +79,6 @@ body {
 }
 
 figure {
-    margin: 0;
     text-align: center;
 }
 
@@ -71,24 +95,61 @@ figcaption {
 }
 
 
-h1 {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 42px;
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .logo {
+        width: 90px;
+        margin-bottom: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr;
+        margin: 20px;
+    }
+
+    p {
+        font-size: 16px;
+        padding: 0 15px;
+    }
 }
 
-img {
-    display: block;
-    margin: 40px auto;
-    width: 800px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
 
-p {
-    text-align: center;
-    font-size: 18px;
-    max-width: 700px;
-    margin: 20px auto;
-    line-height: 1.6;
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .navbar {
+        padding-right: 40px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    img {
+        width: 90%;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 30px;
+    }
 }
